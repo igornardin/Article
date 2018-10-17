@@ -1,0 +1,95 @@
+\input{tables/articles.tex}
+
+In this section, we present the results obtained from the 35 fully assessed studies related to the research topic. We attempt to answer each proposed research question in the following subsections through elaborative information synthesis. After answering the research questions, we created an updated taxonomy with the state-of-the-art of applications microservice and how to improve scalability and performance. 
+
+\subsection{Conducting the Search Strategy}
+We selected 4 electronic databases as our search scope. We used ACM Digital Library, IEEE Xplore Library, ScienceDirect, and SciELO. These portals cover the most relevant journals and conferences within computer science. In the next subsection, we explain how we filter the studies. Figure~\ref{article_selection} shows our filtering process. 
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[scale=0.7]{Images/Article_selection.pdf}
+\caption{Systematic mapping study - article selection.}
+\label{article_selection}
+\end{figure*}
+
+We found 241 articles in the initial search before applying the exclusion criteria. After that, we performed the impurity removal that removes 10 (4.15\%) articles. Then, we joint the articles resulting in 231 articles. So, we filtered by title resulting in 107 (46.32\%) articles. Continuing the process, we perform a filter in abstract resulting in 54 (50.47\%) articles. Finally, we apply the exclusions criterion in the full text remained 35 (64.81\%) articles. These articles are the baseline for the study. Table~\ref{table_articles} shows an overview of all primary studies with the identifier, reference, publication year, publisher, and type.
+
+\begin{figure*}[h!bt]
+\centering
+\includegraphics[scale=0.5]{Images/publication_chronology.png}
+\caption{Publication chronology.}
+\label{chronology}
+\end{figure*}
+
+In Figure~\ref{chronology}, we present the evolution of the selected publications over the years, covering from 2015 to 2018. This figure shows that we find recent articles in our research demonstrating that microservice is a new trend.
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[scale=0.40]{Images/Quality_chart.png}
+\caption{Quality assessment of the articles.}
+\label{quality_chart}
+\end{figure*}
+
+\subsection{Performing the Quality Assessment}
+In Figure~\ref{quality_chart}, we show the quality criteria score of the articles based on the quality assessment criteria proposed in Table~\ref{table_questions}. The quality criteria score for each article obtained is shown on the vertical axis and the studies themselves on the horizontal axis, from 1 to 35. This figure demonstrated that the articles responded positively to at least 5 out of 7 quality assessment criteria. For instance, several articles do not comment on or cite possible future studies in general because they are conclusive articles, with a conclusion on its assessment. Besides, some articles do not address the literature review, background, or context, because they are technical articles.
+
+\subsection{Answers to the Research Questions}
+
+Finally, to address the general and specific research questions, we have identified the following.
+
+\subsubsection{CG1 How would the microservice performance and scalability appear?}
+\input{tables/ResearchQuestionCG1.tex}
+We search characteristics of microservice performance and scalability in articles. We want to find metrics, patterns, protocols, architecture and applications classes of microservice. We review the selected articles to find these characteristics. Table~\ref{table_CG1} presents the results for this review. This table leads the remains research questions.
+
+We used this classification to build the taxonomy (present in section taxonomy). We believe that this taxonomy could help to classify, compare, and evaluate different architectures and solutions for microservices. Table~\ref{table_CG1} presents four groups: (1) Evaluation, (2) User Application, (3) Architectures, and (4) Communication. Each item from the table has a brief description of the classification. Furthermore, the items have a binding with the specific research question that explores the item.
+
+\subsubsection{CG2 What are the motivations for analyzing and improving microservice?}
+\input{tables/ResearchQuestionCG2.tex}
+In this question, we want to find what are the motivations from the articles to analyze the microservice behavior. The major contribution of this question is presents the common concerns in microservice performance and scalability aspects. 
+
+Table~\ref{table_CG2} presents the result from our research on this question. This table has three groups to describe the concerns in microservice related to metric analysis, deployment, and architecture. 
+The metric analysis group aims to answer why is necessary to analyze metrics in a microservice environment, ranging from performance investigation to measure the reliability of the system. Besides that, another interest involves examination of microservice cost, particularly interesting in public clouds, and metrics to analyze the energy consumption.
+
+The second group is the deployment that a investigate the impact of microservice update on the performance and scalability. With DevOps, programmers continually modify the microservice source-code, so it is difficult to know the right moment to deploy some modification.
+
+Finally, the Architecture group analyze the concerns when a developer wants to create a microservice architecture, like how to guarantee the system scalability and how to implement the communication between microservices.
+
+\subsubsection{SQ1 Which are the metrics and algorithms used to evaluate microservice?}
+\input{tables/ResearchQuestionSG1.tex}
+To answer this research question, we analyzed all selected studies that involved research of the metrics and algorithms used in microservice evaluation. Table~\ref{table_SG1} summarized the results of this analysis. We divided this table into four groups.
+
+The first group presents the metrics found in the studies. We found both metrics of host health, like CPU and memory, and application status, like execution time and task queue.
+
+Another group is the metrics types used to evaluate the application. We associated this group with metrics that show the host health such as CPU and memory. There are two types of metrics: (1) Relative metrics and (2) Absolute metrics. In Relative metrics, the value of a metric is just the portion that the host allocates to container/virtual machine. In Absolute metrics, the value is the actual utilization of host resources.
+
+After dividing the metrics, we show the algorithms to evaluate these metrics and perform actions. We found two types of algorithms: (1) Reactive and (2) Proactive. In the reactive form, the system performs an action when a threshold reaches. Already in Proactive form, the system predicts an action before a threshold reaches.
+
+Finally, the last group divides the Proactive form in the algorithms to predicts the application behavior. We found three types: (1) Pattern analysis which matches the application behavior to a template, (2) Mathematical model which applies some mathematical model to analyze the application behavior and predicts future values, and (3) Machine learning which uses a machine learning, such as neural network, to predicts system behavior.
+
+\subsubsection{SQ2 Which are microservice applications classes?}
+\input{tables/ResearchQuestionSG2.tex}
+Now, we want to know what are the classes of the microservice application that articles used. It is crucial because each class has a different approach to evaluate and improve application performance and scalability. For example, transactional applications have a long execution time compared with a batch application. So the best algorithm to use in this type of application is different. 
+
+Table~\ref{table_SG2} shows the classes of the application that we found in our review. We divided the application class into three main groups. The first one is the Transactional application, such as web requests, data transfer, and streaming. This type of application needs to resolve many requests to a server. 
+
+Another type of application is the batch applications that involves image processing, mathematical model, and enterprise resource planning. Unlike the transactional application, the batch application has one request and perform processing.
+
+The last group of application is the Internet of things applications. This class of application involves sensors that produce data. A microservice application can process the data generated by sensors to provide some useful information.
+
+\subsubsection{SQ3 What are the distributed system architecture of microservice applications?}
+\input{tables/ResearchQuestionSG3.tex}
+Another result was the identification of distributed system architecture used in microservice applications. The definition of a distributed system is important to improving scalability and performance. Table~\ref{table_SG3} presents these results. 
+
+We found three types of information. The first group is the architecture used in each article. We found four architectures: (1) Cache based that involves a cache of microservices or cache of response, (2) Load balancer that defines the best host to process the requisitions, (3) Mobile agents that involve an agent that migrate between hosts and adjust the host, and (4) Cloud that we detailed in section~\ref{background}.
+
+The second group detail how the cloud could improve performance and scalability using elasticity. Elasticity could be vertical or horizontal. We explain this in section~\ref{background}.
+
+Finally, the last group is the virtualization to cloud computing. We divided into (1) Virtual machines and (2) Containers. We detailed this in section~\ref{background} too.
+
+\subsubsection{SQ4 Which are communication patterns and protocols to microservice?}
+\input{tables/ResearchQuestionSG4.tex}
+The last question involves determinating the communication patterns and protocols to deploy microservice applications. Table~\ref{table_SG4} detailed the results found.
+
+First, we classified the communication patterns of microservice using the three types explained in section~\ref{background}: (1) Direct communication, (2) Gateway communication, and (3) Message BUS communication.
+
+So, we divided the articles into protocols used in communication between microservices and external applications. We found three types of protocol: (1) HTTP requests using REST API, (2) AMQP protocol that implements a queue of tasks, and (3) Remote protocol call. 

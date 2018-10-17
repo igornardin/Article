@@ -1,0 +1,22 @@
+\begin{table*}[tb]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\caption{Communication patterns and protocols to microservice.}
+\label{table_SG4}
+\begin{tabular}{llll}
+\hline
+\multicolumn{2}{l}{Group and identifier} & Description & Reference articles \\ \hline
+
+\multicolumn{2}{l}{\textbf{Patterns}} &  &  \\
+ & Direct & The microservices communicates directly. & A13, A17, A22, A24, A28, A30 \\
+ & Gateway & Use a gateway between the microservices. & A02, A06, A11, A15, A19, A20, A29, \\
+ &  &  & A31, A34 \\
+ & Message BUS & Use a message BUS to communicates between microservices. &  A06, A27, A34 \\
+ 
+\multicolumn{2}{l}{\textbf{Protocol}} &  &  \\
+ & HTPP/REST & Use REST API to communicates with microservices. & A02, A04, A05, A06, A08, A09, A14,  \\
+ &  &  & A16, A24, A28, A31, A33, A35 \\
+ & AMQP & Application layer protocol for message-oriented middleware. & A27, A34 \\
+ & RPC & Remote protocol call. & A22, A29 \\ \hline
+\end{tabular}
+\end{table*}

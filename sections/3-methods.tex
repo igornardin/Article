@@ -1,0 +1,71 @@
+\input{tables/questions.tex}
+
+After introducing cloud computing and microservices, we explain our study protocol to provide an overview of performance and scalability in microservices. We performed a systematic literature review following widely recognized guidelines \cite{Petticrew2006SystematicSciences} to plan and run systematic mapping studies. We choose this method to find technologies regarding microservices to perform performance and scalability, besides metrics that evaluate this.
+
+First, in this section, we introduce the research questions that drive our review in subsection~\ref{questions}. After that, we present in subsection~\ref{search}, our search strategy and libraries explored to collect data. Then, in subsection ~\ref{selection} we demonstrate the criteria for selecting the studies, and in~\ref{data_extraction} we describe how we extract the data from the studies. Finally, in subsection~\ref{quality_assessment} we describe the quality assessment of the selected studies.
+
+\subsection{Research Questions}
+\label{questions}
+According to \cite{Petticrew2006SystematicSciences}, the first and most important part of a systematic review is defining the right research questions. This definition will direct the entire research. Our focus is finding works that address performance and scalability in microservice applications. We seek for problems, challenges, metrics, and patterns that aim to improve and evaluate these applications.
+
+
+We divide our research questions into two categories: general question (GQ) and specific question (SQ). Table~\ref{table_questions} lists all the research questions investigated.
+
+The General Questions group of research questions involves a broader classification and some challenges concerning microservice performance and scalability. CG1 refers to how performance and scalability appear in related works. This question will contribute to creating a taxonomy in section~\ref{Discussion}. This research question highlights the technologies to provide performance and scalability.
+
+GQ2 refers to the key challenges and issues in microservice performance and scalability. This question is the main factor that will serve as a direct influence on this survey. The purpose is to identify in the literature the types of issues in performance and scalability to microservices. This question will contribute to identifying challenges that we explore in section~\ref{Discussion}.
+
+From General Questions, we derived some specific questions (SQ group) to improve the study filtering process. These questions have been proposed to pinpoint questions surrounding performance and scalability to microservices. From General Questions, we derived some specific questions (SQ group) to improve the study filtering process. These questions have been proposed to pinpoint questions surrounding performance and scalability to microservices. SQ1 seeks to identify the metrics used to evaluate performance and scalability in the microservices application. SQ2 investigates the classes of applications that usually applies microservices. SQ3 examines the types of distributed system architectures in microservice applications. SQ4 investigates the communication patterns and protocols to microservice.
+
+\subsection{Search Strategy}
+\label{search}
+After defining the research questions, we propose the search strategy to find a complete set of studies related to the research questions. This process involved the designation of \textit{search keywords} and the \textit{definition of search scope} \cite{Petticrew2006SystematicSciences}. We defined keywords according to our research questions to obtain accurate search results. We used the PICO (population, intervention, comparison, and outcome) criteria that propose a guideline to define these keywords \cite{Akobeng2005PrinciplesMedicine.}. Follow these criteria allow us to find works that answer our research questions.
+
+We defined PICO criteria based on the general research questions. We desire to refine and answer the specific research questions, which derived from the general research questions. Therefore, we defined the PICO criteria for microservice performance and scalability as follows.
+
+\subsubsection{Population}
+The populations involve keywords, related terms, variants, or the same meaning for the technologies and standards on microservice performance and scalability. Therefore, we created the following search string:
+
+\begin{tcolorbox}[width=\linewidth,title={Search String},colbacktitle=white,coltitle=black]
+("microservices" AND ("performance" OR "metrics" OR "quality of service" OR "scalability"))
+\end{tcolorbox}
+
+\subsubsection{Intervention}
+We used the following terms to better filter studies in line with the purposes: microservices performance metrics, microservice architectures, scalability metrics, and classes of microservice applications. 
+
+\subsubsection{Comparison}
+This case refers to the comparison of different architecture types of microservice implementation that improve performance. Also, we compared applications metrics of microservice to evaluate performance. Besides, we compared the classes of the microservice application. 
+
+\subsubsection{Outcome}
+The outcomes related to factors of importance to application architect (e.g., improved performance) and the cloud administrator. These factors can refer to improving application response time, anticipating potential under/over provisioning, choosing the right metrics to evaluate the application, and choosing the better application architecture.
+
+\subsection{Article Selection}
+\label{selection}
+In this section, we explain how we proceeded to remove the studies that were not relevant. We need to keep only articles that are the most representative in our research. Therefore, we removed the studies that did not address microservice performance and scalability specifically. So, we defined exclusion criteria to refine our search as follows:
+
+\begin{itemize}
+\item Exclusion criterion 1: the article does only address Internet of the Things architecture to microservice.
+\item Exclusion criterion 2: the article does only address deploy of microservices.
+\item Exclusion criterion 3: the article does only address the transformation of a monolithic application to a microservice application.
+\end{itemize}
+
+The steps of the filtering process are as follows: (1) impurity removal, (2) removal of duplicates, (3) filter by title, (4) filter by abstract, and (5) filter by full text.
+
+First, we removed the impurities of the search results. This removal is essential because the search results include, for example, names of conferences correlated to the search keywords. 
+
+Second, we grouped and removed duplicates of the articles because some studies were in more than one database.
+
+Third and fourth, we analyzed the title and abstract of the articles and excluded those that did not address microservice performance and scalability as a subject.
+
+Some studies remained that were not mainly related to this survey. We analyzed the full text to remove those that were not relevant.
+
+\input{tables/quality.tex}
+\input{tables/extraction.tex}
+
+\subsection{Quality assessment}
+\label{quality_assessment}
+Since it is essential to asses the quality of the selected studies, the quality criterion is intended to verify that the article is a relevant study \cite{Petticrew2006SystematicSciences}. For this purpose, we proposed Table~\ref{table_quality} with the questions that we apply to the selected studies to verify its quality. The questions of Table~\ref{table_quality} evaluated the selected articles concerning the purpose of research, contextualization, literature review, related work, methodology, the results obtained, and the conclusion according to objectives and indication of future studies.
+
+\subsection{Data Extraction}
+\label{data_extraction}
+Finally, we created an evaluation scheme to gather information for the selected articles. This form indicates in which sections we search for answers to general and specific research questions. We presented this evaluation in Table~\ref{table_extraction}. This table supports us to understand how the studies have addressed the issues related to the proposed research questions.

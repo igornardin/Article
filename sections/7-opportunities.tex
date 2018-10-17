@@ -1,0 +1,36 @@
+After we present the tendencies found in our review, now we will demonstrate some opportunities. These opportunities are some open issues not found in the literature, and future works can answer one of these open issues.
+
+\subsection{Improving ERP application type}
+ERP is software to deal with some enterprise process. Usually, some ERP applications use the monolithic approach, but this can change with the growing of microservice. We have already explained the benefits of microservice adoption. We found just one article that evaluates the performance of an ERP microservice implementation~\cite{Klock2017}. This article analyzes the microservice architecture of an ERP and suggests improvements in this architecture. So, the user needs to change the architecture to improve the application performance. 
+
+Therefore, future works can implement some tendencies to improve, on-the-fly and without user interference, software performance. One great opportunity is to apply cloud elasticity in ERP software in a microservice environment. The manager of this system can improve performance using vertical or horizontal elasticity and evaluating metrics like CPU and execution time. 
+
+Besides that, another motivation is to evaluate the cost of the software, mainly when submitted to a public cloud. The manager can adjust the cloud to improve the cost of an application using the metrics presented in the previous section. 
+
+\subsection{Image processing application type}
+Image processing is a type of application that applies some modification to an image. In some cases, this process needs a high-performance algorithm because of the amount of data. The application of microservice in this application type aim to divide the complexity into microservices. For example, we can implement an image processing software where each microservice performs one image modification. The system needs to evaluate each microservice individually. 
+
+In our research, we found two articles that use microservice to image processing~\cite{Perez2018, Benchara2017}. The articles use a cache based architecture and a load balancer to evaluate and improve performance. One opportunity for future work is to apply cloud computing elasticity to improve the image processing application using microservices. Submit the image processing software to the cloud provides all the benefits of cloud, like the software distribution and lesser hardware cost. Another opportunity is to use CPU and memory as the evaluation metric. Usually, this type of application uses a lot CPU and memory.
+
+\subsection{Vertical elasticity}
+Horizontal elasticity is the most used elasticity form as we explained before. One motivation to this is that, previously, in some cloud providers to perform a vertical action the manager needs to stop the node before adjusting it. Now, some providers may adjust a node without stop the node. So, use the vertical elasticity can be an opportune approach in some cases.
+
+Just one article uses the vertical elasticity to improve the microservice application~\cite{Al-Dhuraibi2017}. This article evaluates the CPU and memory to performance motivation that are the best metrics to vertical elasticity. The article focuses on web requests application type. Therefore, future works can apply the vertical elasticity to others applications types, like ERP, image processing, mathematical processing, IOT, data transfer, and streaming. 
+
+Besides that, the article motivation is just performance, but vertical elasticity can improve cost too. Some cloud providers charge the user for the resource utilization, so adjust these resources can decrease the application cost. Regarding energy, the vertical elasticity is not a reasonable effort to improvements, because a powered on node spent almost the same energy independently of its resources. For example, reduce the CPU can not impact significantly in energy.
+
+\subsection{Mobile agents}
+Another distributed system to improve microservice is the mobile agents. A mobile agent is an autonomous agent which can migrate between different computers via the network~\cite{Higashino2017ApplicationArchitecture}. Just one article explains this distributed system~\cite{Higashino2017ApplicationArchitecture}, but not implement it. So, this is another opportunity. We have some questions about this model:
+
+\begin{enumerate}
+    \item How this distributed system improve performance?
+    \item Which is the impact of a mobile agent in the nodes? Can this agent decrease the application performance?
+\end{enumerate} 
+
+Future works can implement this architecture to assess the pros and cons of this approach.
+
+\subsection{Proactive algorithms to batch applications}
+Reactive algorithms perform actions when a threshold reaches. Already in the proactive algorithm, the system acts before an undesired state. Hence, the proactive algorithm maintains the system more stable, which can influence the application cost and performance. In transactional applications, it is common use a proactive algorithm to predict user requests to the web host, but in batch applications, this does not appear often. We did not find any article that addresses the proactive algorithm to batch applications. For example, in a high-performance application, apply the proactive algorithm in CPU can improve the performance. 
+
+\subsubsection{Energy metric}
+Green computing is a world tendency to decrease the impact of technology on the environment. In our research, we found just two articles that evaluate the energy impact of a microservice application. We found several areas in microservice adoption without this evaluation, such as batch application type (ERP, Image processing, and Mathematical problems solution), IoT application type, the impact of energy in the different communication patterns (Direct, Gateway, and Message BUS), the implementation of vertical elasticity to improve energy consumption, and the utilization of CPU as metric.

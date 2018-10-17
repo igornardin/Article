@@ -1,0 +1,164 @@
+In this section, we will discuss the reviewed articles. Our objective is to explore what is state of the art regarding microservice performance and scalability. First, we will investigate question by question showing the items with higher usage. After that, we will cross-reference the items showing some trends. 
+
+\subsection{CG1 How would the microservice performance and scalability appear?}
+This question guides our remains research questions and our taxonomy that we presented in the previous section. Table~\ref{table_CG1} shows the result of this question. We divided into four main groups. We analyze each group in the following sections.
+
+The first group is the Microservice Evaluation, one of the most important contributions of this survey. With this group, we want to describe the metrics and algorithms to evaluate the microservices. This group helps to classify the solutions for microservice.
+
+The second group is the microservice application type. This group is essential because this shows us the microservice application trends. Determining the application type, allow us to indicates the better approach in performance terms and scalability.
+
+The third group describes the microservice architectures found in reviewed articles. This group demonstrated how the performance and scalability appear in the architecture. 
+
+The last group presents communication patterns and protocols. Communication is a crucial element in microservice since a microservice collection build an application. So, each microservice needs to communicate with the others to compose an entire application.
+
+\subsection{CG2 What are the motivations for analyzing and improving microservice?}
+
+Now, we want to determine the primary motivation for the reviewed articles for analyzing microservice metrics. It is crucial to define the motivation to relate this to the design decisions. 
+
+Table~\ref{table_CG2} demonstrated the results from this question. We will analyze the three groups together because there is not a real division in this question. We divided this just for better comprehension in previous sections. 
+
+The primary concern, about analyzing microservice metrics, is the evaluation of microservice performance. Our results show that 94.2\% of total articles indicate this concern. This concern implies analyzing the application response time, how long the application takes to finalize a job, how much jobs the application process in a second, and others motivations related to execution.
+
+The second concern is the scalability, with 42.85\% of articles. Scalability is an essential motivation to analysis the microservice. Application requests may increase, and the architecture needs to deal with this increase. 
+
+Another motivation is to evaluate the cost of the application. This concern is particularly important when using a public cloud because the cloud provider charges the user for the utilization. In our research, 22.86\% of the articles present this motivation. 
+
+The reliability is another motivation to evaluate microservices. This motivation involves ensuring that the microservice responds correctly and without fail.  We found this motivation in 14.29\% of total articles.
+
+The microservice update impact is another concern that we found in 8.57\% of total articles. This update can impact in microservice because the microservices needs change on the fly without stopping the application. 
+
+The remain motivations for analyzing microservice are energy consumption and communication. Energy consumption appears in 5.71\% of total articles and Communication in 2.86\%. While the first one analyzes the impact of microservice on energy consumption, the Communication evaluates the impact of the communication between microservices in the application.
+
+The above results show that the primary motivation to evaluate and analyze microservice metrics is to know the application performance and scalability. Regarding performance, a monolithic application has a better performance than the microservice approach. One motivation for the better performance in the monolithic approach is the communication between microservices. This evaluation is essential to keep performance after migration from monolithic to microservice. Also, the application needs to handle the increase in user requests, so evaluate scalability is another important motivation. 
+
+When the microservice application is in a public cloud provider, the cost evaluation of the application is an important motivation. The resource management is crucial to submit a microservice to cloud, and this management needs to avoid resources wasting. Maintain an unnecessary resource online is a waste of money in a public cloud.
+
+\subsection{SQ1 Which are the metrics and algorithms used to evaluate microservice?}
+
+In this section, we will describe the metrics and algorithms used to evaluate microservice that we found in reviewed articles. Table~\ref{table_SG1} shows the result of this question. First, we will present the most utilized metrics. After that, we describe the metric types found. Finally, we show the algorithms to analyze these metrics.
+
+The primary metric used in microservice evaluation is the execution time. This metric appears in 51.43\% of total articles. Analyze execution/response time is vital because this metric shows a direct relation with application performance. It is a useful performance metric because this indicates how long the microservice takes to answer. The system can compare the desired time with the time measured to make decisions.
+
+Another metric used in microservice evaluation is the CPU. We found this metric in 45.71\% of total articles. Unlike the execution time, the manager can measure CPU directly from application host. While the execution time needs instrumentation to be measured, the CPU shows the state of the microservice host without instrumentation. If the microservice host has a high CPU percentage, this affects the host performance and indicates that this host has a high workload to process.
+
+The third metric is the network throughput, which appears in 25.71\% of total articles. This metric presents the communication throughput between the microservices and between the user and the application. Like CPU, some host managers provide this metric directly. Network throughput affects the performance. A low throughput impacts the communication between the microservices, so a microservice needs wait for all data before starting the processing.
+
+With 20\% of total articles, the next metric is the task processing rate. This metric indicates the number of tasks processed per time (e.g. 20 jobs/s). Like execution time, task processing rate needs instrumentation to be measured. Also, this metric is a useful performance metric because this indicates how many tasks the microservice can process in a period. With this rate, the manager can analyze requests patterns and make adjustments in the host.
+
+Also with 20\% of total articles, another metric is the memory. This metric affects the performance when the virtual memory is full, and the system needs to wait a time for retrieving data from physical to virtual memory. If the host has low memory, this frequently occurs. 
+
+The last metric, with 14.26\% of total articles, is the task queue. This metric shows how long is the microservice task queue. If a microservice has many requests for processing and the task processing rate is not good enough, this microservice queue will grow and, consequently, the response time will increase. 
+
+After we presented the metrics found in the reviewed articles, we will describe the metrics types. We found two types: (a) Relative and (b) Absolute. The relative metric type demonstrates the share of CPU used by one container concerning other containers. For example, if a host has two containers and each container use all allocated CPU, the measured value of each container will be 50\%. In absolute metrics, the measure values demonstrated the value of the container just concerning itself. In the same previous example, each container measured will show 100\%. Just one reviewed article detailed absolute metric~\cite{Casalicchio2017}, but many articles use one microservice in one container, so, in this case, the absolute and relative metrics have the same value.
+
+Finally, we will describe the algorithms to evaluate the metrics that we found in reviewed articles. We categorized the algorithms in (a) reactive and (b) proactive. In the reactive approach, the system decides to act when a threshold reaches. This approach has a more straightforward implementation comparing with the proactive approach. The easier implementation can explain that we found more reactive approaches than proactive. We found 37.14\% of total articles to the reactive approach. The proactive algorithm tries to predict future behavior and perform an action before an undesirable state reaches. In the reviewed articles, 14.29\% use the proactive form. To predict future behaviors, we found three proactive classes: (a) Pattern Analysis, (b) Mathematical model, and (c) Machine learning. 
+
+All three algorithms have the same percentage (5.71\%) of the total reviewed articles. In Pattern Analysis, the manager tries to match the actual behavior of the application with a pattern. Using this information, the manager can predict how the system will behave. Already in the Mathematical model, the manager uses one or many mathematical models to describe the application behavior. With this model, the predictor can extrapolate the values of the model to calculate future values. Finally, the last proactive class is machine learning. In this approach, the manager uses some algorithm, like a neural network, to define the system behavior. After train the algorithm, the system can simulate some cases to evaluate how the system will work. 
+
+\subsection{SQ2 Which are microservice applications classes?}
+In this section, we will describe the classes of the microservice application found in reviewed articles. With this classification, we can correlate the application classes with other questions. First, we divided into three groups: Transactional, Batch, and IoT. 
+
+The transactional is the application class that involves many user requests over the internet. In this classes, we found three applications types: (a) Web requests, (b) Streaming, and (c) Data transfer. 
+
+In (a), we have many user requests to a host, like a website. We found 34.26\% of total articles that address this application type. In (b) the application maintains a connection with the user to streaming multimedia data. We found 5.71\% of total articles to the streaming application type. Like the Streaming application type, the (c) also has 5.71\% of total articles. This application class describes an application that transfer data between servers and users.
+
+The second group is the batch application type. This group involves applications that the user executes one solicitation and wait for the application ends. We found three application types into this group: (a) Mathematical, (b) Image processing, and (c) ERP. 
+
+In (a), the user needs to process a mathematical problem. This problem can take some time to finalize, so the user needs to wait for the end. We found 11.43\% of total articles in this class. In the application type (b), the user needs to manipulate some image, like add saturation. To this type, we found 5.71\% of total articles. Finally, in the (c), the user has many functions to his enterprise. The user executes one function and waits for the end. We found 2.86\% of total articles in this type.
+
+The last group is Internet of Things. This application class consists of applications with integration to sensors. We found  5.71\% of total articles in this application class.
+
+\subsection{SQ3 What are the distributed system architecture of microservice applications?}
+
+Now, we will describe the distributed system architecture of microservice applications. First, we will describe the architectures. We have four architectures: Cloud, Load balancer, Cache Based, and Mobile agent.
+
+The first architecture is the cloud. We found 48.57\% of total articles that use the cloud to improve the microservice application. This result does not mean that the others architectures do not use the cloud but means that these articles use as the primary architecture of the cloud.
+
+The second architecture is the load balancer. In this architecture, the system has a component named as the load balancer. This component directs the requisitions to the right node to process. In our review, 22.86\% of articles use a load balancer.
+
+The next architecture is the cache based. This architecture consists of a component that evaluates the requisition. If the answer for this requisition is in the cache, retrieve the cached answer. 8.57\% of articles use cache architecture.
+
+The last architecture is the mobile agent that we found 2.86\% in our review. Mobile agents consist of a component that migrates into each node and performs some action or measurement. 
+
+Microservice applications widely use the cloud, as shown previously. One motivation to use the cloud is because of the elasticity. So, it is crucial to define the elasticity types found in the reviewed articles. We found two elasticity types: Horizontal and Vertical. 
+
+In cloud computing, horizontal elasticity is the most used. We found 17 articles that use cloud computing as the primary architecture. Of these 17 articles, 16 articles implement horizontal elasticity. Horizontal elasticity is the ability to add and remove nodes on-the-fly. 
+
+The vertical elasticity has few implementations. We found just one article that addresses vertical elasticity. In vertical elasticity, the system adjusts a node adding and removing resources, like CPU and memory. Previously the vertical need to stop the application. The most recent cloud providers indicate that is not needed to stop the execution anymore.
+
+Another classification is the virtualization type. We found two types: Container and Virtual Machines. Containers are not a new concept but grow with the rise of Docker. We found 51.43\% of articles that use containers. This percentage demonstrate how the containers utilization surpassed the virtual machines utilization. 
+
+We found 28.57\% of articles that use virtual machines yet. This percentage tends to decrease since the microservice is a perfect implementation for containers. The major difference between virtual machines and containers is that the container is virtualization at the operating system level. Already in the virtual machine, the whole system is virtualized, inclusive the operating system. So, the container has a minor boot start time comparing with the virtual machine.
+
+\subsection{SQ4 Which are communication patterns and protocols to microservice?}
+Finally, the last question is about communication. When a system migrates to microservice from monolithic, the first concern is the impact of communication in performance and scalability. Before microservice, the communication between the functions are in the same computer node, so this communication is not a factor to consider. With microservice, communication usually uses the internet, and the internet has a high impact on performance.
+
+Finally, the last question is about communication. When a system migrates to microservice from monolithic, the first concern is the impact of communication in performance and scalability. Before microservice, the communication between the functions are in the same computer node, so this communication is not a factor to consider. With microservice, the communication usually uses the internet, and the internet has a high impact on performance. To analyze the communication, we divide this question into two groups: Communication patterns and Communication protocol.
+
+The first is the pattern used to define all communication between microservices. We found three communication patterns: Gateway, Direct, and Message BUS. We detailed in the background section these three patterns.
+
+The most used communication pattern is the gateway. We found 25.71\% of reviewed articles use the gateway communication pattern. One microservice characteristic is the programming language heterogeneity, that is each microservice could use a different language. So, this gateway is useful because the gateway translates the protocol between microservices.
+
+In the direct communication pattern, the microservices communicate with each other directly.  Differently from the gateway, in this pattern, the programmer needs implements the same communication protocol in the different languages of each microservice. We found 14.29\% of articles that use this communication pattern.
+
+The last pattern is the message BUS. In this pattern, the system uses a message BUS to communicate between microservices. So, the microservices get a task from the message BUS, process this task and return the result to message BUS. This result can be a task for another microservice. We found 8.54\% articles that use message BUS.
+
+After describing the communications patterns, we will detail the communication protocols. We found three protocols: REST HTTP, AMQP, and RPC. The most used protocol is the REST HTTP. This protocol provides interoperability between internet system using web services. Usually, this protocol provides four operations: GET, POST, PUT, and DELETE. We found 37.14\% articles that use REST protocol. 
+
+The two remains protocols are AMQP and RPC that we found 5.71\% articles. The Advanced Message Queuing Protocol (AMQP) is an implementation of a queue of messages. Finally, the last protocol is the RPC (Remote Procedure Call). This protocol allows a procedure to execute in a different address space.
+
+\subsection{Tendencies}
+Now, we will describe some tendencies to microservices. The previous section explains some tendencies analyzing each item of the research questions individually. In this section, we correlate the items, showing some trends to implement microservice analysis. We will explain this in three steps. First, we will correlate the motivations with the others research questions. After that, we will show the correlation of application type with others research questions. Lastly, we will describe other correlation found in the review.
+
+\subsection{Motivation and Application type}
+In this section, we will show the correlation found in our review between motivation and application type. All the four motivations that we will analyze in this section use the web requests application type. This result demonstrates the growth of web applications using microservices. Besides that, microservice is a structure for web applications, and this result confirms that.
+
+The first motivation is the performance that we found 33 articles. In this motivation, we found 14 articles with performance motivation and transactional application type. Of these 14 articles, we found 12 articles that use a web requests application type. Evaluating the microservice performance of web applications is essential to improve the user experience. Differently from batch applications, in the transactional applications, the waiting time directly affects the application quality.
+
+The scalability motivation appears in 15 of the reviewed articles. Like in performance motivation, the most used application type is transactional with 8 articles. Of these 8 articles, we found 6 articles that use a web requests application type. The scalability evaluation for web applications is especially necessary for web requests. In a web application, the number of users using the service affects directly the number of nodes necessary to maintain the server working properly. 
+
+The third motivation is the microservice update that we found three articles. All three articles use web requests. The update motivation is a concern just in web applications since in this class the application the developer wants to update the application without stopping the user utilization. 
+
+The last motivation is the cost motivation. We found eight articles with this motivation. Of these eight articles, three use web requests application type. Analyzing the cost of the web applications is essential especially when this application is in the cloud. 
+
+\subsection{Motivation and Metrics}
+Now, we will correlate the motivation with the metrics research question. The first motivation is performance. Of the 33 performance articles, we found 17 articles that use execution time. The execution time is a metric that directly indicates the application performance. With the execution time, the system can evaluate the performance of each microservice comparing the measured value with the expected value. This comparison determines the microservice state, and the manager uses to perform actions to improve performance (like adding more microservice nodes). 
+
+Another metric used in performance motivation is CPU. We found 15 articles using the CPU as the metric to evaluate microservice. CPU indicates the usage percentage from the Central Processing Unit. For example, if a node has a high CPU percentage, this can indicate that this node has many tasks for processing. With this information, the system can add more resources to help this node in its job. 
+
+Still in performance motivation, another tendency is the utilization of a reactive algorithm. We found 12 articles with the reactive algorithm. Applications use a reactive algorithm because this algorithm has a more natural implementation and does not need a learning period. Usually, the reactive algorithm has a lightweight implementation, in comparison with proactive algorithms. So, a more complex algorithm can impact the application performance.
+
+The second motivation is scalability. Like the performance motivation, the scalability has as the primary metric of the execution time. We found eight scalability articles that use execution time. The execution time can indicate that a microservice is slower than expected. So, if the number of users increases and the microservice has a high execution time, the system delay to answer each user. Therefore, the manager needs to add more nodes. Like in performance motivation, another tendency in scalability motivation is the utilization of a reactive algorithm that we found six articles. The reactive utilization in scalability has the same motive that in performance motivation. 
+
+The next motivation is the cost. The primary metric of this motivation is execution time, like the previous motivations. We found six articles that use execution time to evaluate cost. The relationship between cost and execution time is that the longer the execution time, the more costly is the application. Therefore, the execution time is the right metric to evaluate the cost of an application.
+
+Finally, the last motivation is reliability. We found five articles that have reliability as motivation. Three of these five articles use CPU as the metric to evaluate the reliability. The CPU indicates the status of a node in a microservice environment. Therefore, if the system has many nodes with high CPU usage, possibly the application was in an undesirable state. Hence, the microservices starts to delay the answer or lost some packages. 
+
+\subsection{Motivation and Distributed system}
+The evaluation motivation guide the selection of the best microservice architecture. So, it is essential to define the correlation between the motivations and the distributed system in microservice applications. This section will present our results of this correlation.
+
+Cloud computing appears as the most used architecture of four motivations: Performance, Reliability, Cost, and Scalability. This result shows that cloud computing is a tendency for microservice since these motivations are the primary motivations found. The performance and scalability evaluation of a cloud is an essential motivation because the cloud allows modifications on the fly in its environment to improve. Regarding cloud, we found 15 of 33 articles that have the motivation as performance and 8 of 15 that have the motivation as scalability.
+
+The cost evaluation is essential in a cloud environment, mainly in a public cloud. In a public cloud, the client will pay for the time and resource usage. Therefore, the evaluation and improvement of the cost can be the success factor of a software. The cost evaluation combined with cloud computing appears in four of eight of reviewed articles about cost evaluation.
+
+The four motivations that have cloud as the most used distributed system, also have the horizontal elasticity as the improvement policy. If a microservice environment has a node with much work to do, seems more useful to add another node to helps with the workload rather than add more resources in the node. It is not sure that increasing memory or CPU capacity will improve the node performance. So, horizontal elasticity looks a best practice than vertical. Another motivation to the horizontal elasticity is that some providers did not support on-the-fly vertical adjustment. Therefore, the cloud needed to stop an application before adjusting a node. However, more recent implementations of cloud providers already have the possibility of on-the-fly vertical adjustments.
+
+Just one motivation has a different distributed system as a tendency: The updating microservice evaluation. Instead of cloud computation, the updating motivation uses a load balancer as the distributed system. All the three articles that evaluate the impact of the update in a system use a load balancer. This motivation needs a load balancer to distribute the workload just for the microservices updated. So, if a node has an outdated microservice, the load balancer will stop transferring jobs to this node until the update is complete.
+
+\subsection{Application type and Metrics}
+In this section, we will demonstrate the correlation between application type and metrics. This correlation is important to determine the best metric for each application type. For the web requests application type, we found two metrics: Execution time and CPU. In web requests applications, the time to answer a user request is a crucial concern. So, this evaluation can determinate how successful is an application. We found seven of twelve web requests articles that use execution time as a metric. The CPU metric indicates how busy is a node. A busy node can affect the performance of an entire application. So, the manager needs to adjust busy nodes, adding more resources. Finally, the last metric for web requests is the tasks throughput. This metric indicates the rate of tasks that the microservice process. We found five of twelve web requests articles that use CPU as a metric.
+
+Besides that, another tendency of web request applications is the reactive algorithm. Six of the twelve articles use a reactive algorithm to evaluate a metric. Reactive algorithms have a more straightforward implementation and good results, but the system may take time to respond to changes. 
+
+We found just one metric to the mathematical batch application type: CPU. All the articles of mathematical application use CPU as a metric. For batch applications, it is more useful to analyze the CPU than execution time because batch applications perform more processing and require more CPU than transactional. So, the CPU affects the performance of a batch application directly.
+
+\subsection{Application type and Distributed system}
+Now, we will describe the distributed system found for the web requests application. Cloud computing is the most used distributed system for web requests application. Seven of the twelve articles of web requests use cloud computing to improve the application, and six of them use horizontal elasticity. According to the number of requests grows, the system can add more cloud resources. The web application usually is in a cloud, so the usage of the elasticity does not affect the app.
+
+\subsection{Application type and Communication pattern}
+After we correlated the application type with the distributed system, we will describe the relationship between application type and communication pattern. We found five articles that implement REST API to web requests application type. This application uses the REST API in the communication between microservices. The Rest API is a lightweight API, so it is an excellent API regarding performance.
+
+\subsection{Metrics and Distributed system}
+In this section, we will show the correlation between the metrics for evaluation and the distributed system used in the articles. The first metric is CPU. We found sixteen articles that use CPU as the metric for evaluation. Ten articles of these sixteen use the cloud computing as the architecture to improve the application, and nine of them use horizontal elasticity. The cloud measures the CPU without instrumentation, so it is easy to evaluate this metric. Besides that, the CPU indicates the workload of a node directly. According to the value measured, the manager adds/removes nodes, that is, take some elasticity actions.
+
+The remain metrics need instrumentation to measure its value: (a) Execution time and (b) Task queue. In both metrics, the cloud with elasticity is the architecture more used. In (a), we found nine articles of eighteen that use execution time. The execution time indicates how long a microservice takes to process. So, in the cloud, if a microservice takes too long to process, the manager can add more resources on the fly to end the application. The (b) metric is similar to (a), so, according to the queue length, the manager adjusts the cloud to improve performance. We found four articles that use task queue and cloud computing with elasticity.

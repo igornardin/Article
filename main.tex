@@ -1,0 +1,113 @@
+\documentclass[final,5p,times,twocolumn]{elsarticle}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc} % charset do texto (utf8, latin1, etc.)
+\usepackage[T1]{fontenc} % encoding da fonte (afeta a sep. de sílabas)
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\graphicspath{ {Images/} }
+
+\journal{Information and Software Technology}
+
+%=======================================================================
+% Início do documento.
+%=======================================================================
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Microservices: A Survey of performance metrics and scalability}
+
+\author[Unisinos]{Igor Fontana de Nardin\corref{cor1}}
+\ead{igor.fdn@gmail.com}
+
+\author[Unisinos]{Rodrigo da Rosa Righi}
+\ead{rrrighi@unisinos.br}
+
+\author[Unisinos]{Cristiano André da Costa}
+\ead{cac@unisinos.br}
+
+
+\address[Unisinos]{Universidade do vale do Rio dos Sinos, São Leopoldo, Brazil}
+\cortext[cor1]{Corresponding author}
+
+%=======================================================================
+% Resumo
+%=======================================================================
+\begin{abstract}
+Microservice is a new trend in software engineering that based on divide an application into several services, each one with a small function. This concept allows that programmers write the source code of each microservice using the better language and framework based on the microservice function. Several articles define and implements a microservice architecture and perform a performance and scalability evaluation, but few articles consolidate the information of these evaluations. It is essential this consolidation because the microservice is a growing structure and needs a literature review. Therefore, this article is a survey that aims to find the tendencies in microservice applications. First, we present a brief background explaining cloud computing and microservice. Microservice is perfect for cloud computing, and this section explains why. After that, we explain the method of our research. So, we defined six research questions that aim to identify the motivation for this evaluation, metrics used in microservice evaluation, the application classes of microservice, the distributed system used to improve the application, and the communication patterns and protocols to microservice. These research questions guide the search string to find the articles to our survey. We applied this search string into some electronic databases. With the result of this search, we answered the research questions and proposed a taxonomy to direct future implementations. After that, we explain some tendencies and opportunities to microservice adoption.
+\end{abstract}
+
+\begin {keyword}
+Microservices \sep Performance \sep Scalability \sep Metrics \sep Quality of service
+\end{keyword}
+
+\end{frontmatter}
+
+%=======================================================================
+% Introdução
+%=======================================================================
+\section{Introduction}
+\label{intro}
+\input{sections/1-introduction.tex}
+
+%=======================================================================
+% Fundamentação teórica
+%=======================================================================
+\section{Background}
+\label{background}
+\input{sections/2-background.tex}
+
+
+%=======================================================================
+% Seleção dos artigos
+%=======================================================================
+\section{Methods}
+\label{methods}
+\input{sections/3-methods.tex}
+
+%=======================================================================
+% Estado da arte
+%=======================================================================
+\section{Results}
+\label{results}
+\input{sections/4-results.tex}
+
+
+%=======================================================================
+% Taxonomia
+%=======================================================================
+\section{Taxonomy Proposal}
+\label{Taxonomy-proposal}
+\input{sections/5-taxonomy-proposal.tex}
+
+%=======================================================================
+% Desafios
+%=======================================================================
+\section{Discussion}
+\label{Discussion}
+\input{sections/6-discussion.tex}
+
+
+%=======================================================================
+% Oportunidades
+%=======================================================================
+\section{Opportunities}
+\label{opportunities}
+\input{sections/7-opportunities.tex}
+
+%=======================================================================
+% Conclusão
+%=======================================================================
+\section{Conclusion}
+\label{conclusion}
+\input{sections/8-conclusion.tex}
+
+%=======================================================================
+% Referências
+%=======================================================================
+\section{References}
+\bibliographystyle{elsarticle-num-names}
+\bibliography{main}
+
+\end{document}
